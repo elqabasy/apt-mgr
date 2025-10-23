@@ -1,4 +1,4 @@
-# apt-mgr
+# pkgmgr
 
 **Professional APT Package Management Tool**
 
@@ -6,10 +6,10 @@
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Platform](https://img.shields.io/badge/platform-Debian%20|%20Ubuntu%20|%20Kali-lightgrey.svg)
 
-`apt-mgr` is a comprehensive command-line utility designed to simplify package management on Debian-based systems (Debian, Ubuntu, Kali Linux). It provides robust backup/restore capabilities, intelligent cleanup features, and detailed system analysis in a user-friendly interface.
+`pkgmgr` is a comprehensive command-line utility designed to simplify package management on Debian-based systems (Debian, Ubuntu, Kali Linux). It provides robust backup/restore capabilities, intelligent cleanup features, and detailed system analysis in a user-friendly interface.
 
 **Author**: Mahros AL-Qabasy ([mahros.elqabasy@gmail.com](mailto:mahros.elqabasy@gmail.com))  
-**Repository**: https://github.com/elqabasy/apt-mgr
+**Repository**: https://github.com/elqabasy/pkgmgr
 
 ## ✨ Features
 
@@ -25,85 +25,85 @@
 
 ### Direct Download
 ```bash
-wget https://raw.githubusercontent.com/elqabasy/apt-mgr/main/apt-mgr
-chmod +x apt-mgr
-sudo mv apt-mgr /usr/local/bin/
+wget https://raw.githubusercontent.com/elqabasy/pkgmgr/main/pkgmgr
+chmod +x pkgmgr
+sudo mv pkgmgr /usr/local/bin/
 ```
 
 ### From Source
 ```bash
-git clone https://github.com/elqabasy/apt-mgr.git
-cd apt-mgr
+git clone https://github.com/elqabasy/pkgmgr.git
+cd pkgmgr
 sudo make install
 ```
 
 ### Debian Package (Coming Soon)
 ```bash
 # Download .deb file and install
-sudo dpkg -i apt-mgr_1.1.0_all.deb
+sudo dpkg -i pkgmgr_1.1.0_all.deb
 ```
 
 ## 📖 Usage Examples
 
 ```bash
 # Backup user-installed packages
-apt-mgr backup --minimal
+pkgmgr backup --minimal
 
 # Full system backup
-apt-mgr backup
+pkgmgr backup
 
 # Preview aggressive cleanup
-apt-mgr clean --aggressive --dry-run
+pkgmgr clean --aggressive --dry-run
 
 # Perform safe cleanup
-apt-mgr clean
+pkgmgr clean
 
 # Restore from backup
-apt-mgr restore my-backup.txt
+pkgmgr restore my-backup.txt
 
 # Analyze large packages (>100MB)
-apt-mgr analyze --size 100MB
+pkgmgr analyze --size 100MB
 
 # Show system status
-apt-mgr status
+pkgmgr status
 
 # Display help
-apt-mgr help
+pkgmgr help
 ```
 
 ## 🗂️ Command Reference
 
 ### Backup
 ```bash
-apt-mgr backup [filename]          # Backup to file
-apt-mgr backup --minimal           # Only user-installed packages
+pkgmgr backup [filename]          # Backup to file
+pkgmgr backup --minimal           # Only user-installed packages
 ```
 
 ### Restore
 ```bash
-apt-mgr restore [filename]         # Restore from backup
-apt-mgr restore --dry-run          # Simulate restore
+pkgmgr restore [filename]         # Restore from backup
+pkgmgr restore --dry-run          # Simulate restore
 ```
 
 ### Cleanup
 ```bash
-apt-mgr clean                      # Safe cleanup
-apt-mgr clean --aggressive         # Include config files, logs
-apt-mgr clean --dry-run            # Show what would be removed
+pkgmgr clean                      # Safe cleanup
+pkgmgr clean --aggressive         # Include config files, logs
+pkgmgr clean --dry-run            # Show what would be removed
 ```
 
 ### Analysis
 ```bash
-apt-mgr status                     # System status and cleanup potential
-apt-mgr analyze                    # Find largest packages
-apt-mgr analyze --size 50MB        # Packages larger than 50MB
+pkgmgr status                     # System status and cleanup potential
+pkgmgr analyze                    # Find largest packages
+pkgmgr analyze --size 50MB        # Packages larger than 50MB
 ```
 
 ## 📁 Project Structure
 
 ```
-apt-mgr/
-├── apt-mgr                 # Main bash script
+pkgmgr/
+├── pkgmgr                 # Main bash script
 ├── README.md              # This file
 ├── LICENSE               # MIT License
 ├── Makefile              # Installation makefile
@@ -123,7 +123,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🐛 Bug Reports
 
-If you encounter any issues, please [open an issue](https://github.com/elqabasy/apt-mgr/issues) on GitHub.
+If you encounter any issues, please [open an issue](https://github.com/elqabasy/pkgmgr/issues) on GitHub.
 
 ---
 

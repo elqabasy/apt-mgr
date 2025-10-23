@@ -1,6 +1,6 @@
-#compdef apt-mgr
+#compdef pkgmgr
 
-_apt-mgr() {
+_pkgmgr() {
     local state
     local -a commands backup_opts restore_opts clean_opts analyze_opts
 
@@ -50,4 +50,4 @@ _apt-mgr() {
     esac
 }
 
-_apt-mgr "$@"
+_pkgmgr "$@"

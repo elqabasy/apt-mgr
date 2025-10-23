@@ -1,4 +1,4 @@
-apt-mgr (1.1.0) unstable; urgency=medium
+pkgmgr (1.1.0) unstable; urgency=medium
 
   * Initial release
   * Professional APT package management tool
@@ -6,4 +6,4 @@ apt-mgr (1.1.0) unstable; urgency=medium
   * Bash and Zsh completion support
   * Comprehensive manual pages
 
- -- Mahros AL-Qabasy <mahros.elqabasy@gmail.com>  Thu, 23 Oct 2025 09:20:38 +0300
+ -- Mahros AL-Qabasy <mahros.elqabasy@gmail.com>  Thu, 23 Oct 2025 10:40:37 +0300

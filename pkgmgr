@@ -1,17 +1,20 @@
 #!/bin/bash
 
-# apt-mgr - Professional APT Package Backup, Restore and Cleanup Tool
-# Version: 1.1.0
-# Author: Your Name
-# License: MIT
 
 set -euo pipefail
 
-# Configuration
+
+# pkgmgr - Professional APT Package Backup, Restore and Cleanup Tool
+
+
+
+# Now use the configuration variables
 VERSION="1.1.0"
-BACKUP_DIR="${HOME}/.apt-mgr/backups"
-CONFIG_DIR="${HOME}/.apt-mgr"
-LOG_FILE="${CONFIG_DIR}/apt-mgr.log"
+PACKAGE_NAME="pkgmgr"
+
+BACKUP_DIR="${HOME}/.${PACKAGE_NAME}/backups"
+CONFIG_DIR="${HOME}/.${PACKAGE_NAME}"
+LOG_FILE="${CONFIG_DIR}/${PACKAGE_NAME}.log"
 
 # Colors for output
 RED='\033[0;31m'
@@ -310,10 +313,10 @@ analyze_packages() {
 # Show usage
 show_help() {
     cat << EOF
-apt-mgr v${VERSION} - APT Package Backup, Restore and Cleanup Tool
+${PACKAGE_NAME} v${VERSION} - APT Package Backup, Restore and Cleanup Tool
 
 USAGE:
-    apt-mgr [COMMAND] [OPTIONS]
+    ${PACKAGE_NAME} [COMMAND] [OPTIONS]
 
 COMMANDS:
     backup [filename] [--minimal]    Backup installed packages
@@ -325,12 +328,12 @@ COMMANDS:
     version                          Show version
 
 EXAMPLES:
-    apt-mgr backup                           # Full backup
-    apt-mgr backup --minimal                 # Only user-installed packages
-    apt-mgr restore my-backup.txt            # Restore packages
-    apt-mgr clean                            # Safe cleanup
-    apt-mgr clean --aggressive --dry-run     # Preview aggressive cleanup
-    apt-mgr analyze --size 100MB             # Find packages >100MB
+    ${PACKAGE_NAME} backup                           # Full backup
+    ${PACKAGE_NAME} backup --minimal                 # Only user-installed packages
+    ${PACKAGE_NAME} restore my-backup.txt            # Restore packages
+    ${PACKAGE_NAME} clean                            # Safe cleanup
+    ${PACKAGE_NAME} clean --aggressive --dry-run     # Preview aggressive cleanup
+    ${PACKAGE_NAME} analyze --size 100MB             # Find packages >100MB
 
 BACKUP FILES:
     Backups are stored in: ${BACKUP_DIR}
@@ -422,7 +425,7 @@ main() {
             ;;
             
         version)
-            echo "apt-mgr v${VERSION}"
+            echo "${PACKAGE_NAME} v${VERSION}"
             ;;
             
         *)

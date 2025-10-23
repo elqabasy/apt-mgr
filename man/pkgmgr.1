@@ -1,11 +1,11 @@
-.TH APT\-MGR 1 "2024" "apt-mgr 1.1.0" "APT Package Management Tool"
+.TH APT\-MGR 1 "2024" "pkgmgr 1.1.0" "APT Package Management Tool"
 .SH NAME
-apt-mgr \- Professional APT package backup, restore and cleanup tool
+pkgmgr \- Professional APT package backup, restore and cleanup tool
 .SH SYNOPSIS
-.B apt-mgr
+.B pkgmgr
 [\fICOMMAND\fR] [\fIOPTIONS\fR]
 .SH DESCRIPTION
-.B apt-mgr
+.B pkgmgr
 is a comprehensive command-line utility designed to simplify package management on Debian-based systems (Debian, Ubuntu, Kali Linux). It provides robust backup/restore capabilities, intelligent cleanup features, and detailed system analysis in a user-friendly interface.
 .SH COMMANDS
 .TP
@@ -48,32 +48,32 @@ Filter packages by minimum size (e.g., 100MB, 1GB).
 .SH EXAMPLES
 Backup user-installed packages:
 .RS
-.B apt-mgr backup \-\-minimal
+.B pkgmgr backup \-\-minimal
 .RE
 .PP
 Preview aggressive cleanup:
 .RS
-.B apt-mgr clean \-\-aggressive \-\-dry-run
+.B pkgmgr clean \-\-aggressive \-\-dry-run
 .RE
 .PP
 Restore packages from backup:
 .RS
-.B apt-mgr restore backup\-20241201\-143022.txt
+.B pkgmgr restore backup\-20241201\-143022.txt
 .RE
 .PP
 Find packages larger than 100MB:
 .RS
-.B apt-mgr analyze \-\-size 100MB
+.B pkgmgr analyze \-\-size 100MB
 .RE
 .SH FILES
 .TP
-.B ~/.apt-mgr/backups/
+.B ~/.pkgmgr/backups/
 Directory where backup files are stored.
 .TP
-.B /etc/apt-mgr.conf
+.B /etc/pkgmgr.conf
 Configuration file (if used).
 .TP
-.B ~/.apt-mgr/apt-mgr.log
+.B ~/.pkgmgr/pkgmgr.log
 Log file for all operations.
 .SH AUTHOR
 Mahros AL-Qabasy <mahros.elqabasy@gmail.com>
@@ -82,7 +82,7 @@ Mahros AL-Qabasy <mahros.elqabasy@gmail.com>
 .BR dpkg (1),
 .BR apt-mark (8)
 .SH BUGS
-Report bugs at <https://github.com/elqabasy/apt-mgr/issues>
+Report bugs at <https://github.com/elqabasy/pkgmgr/issues>
 .SH COPYRIGHT
 Copyright © 2024 Mahros AL-Qabasy. License MIT.
 This is free software: you are free to change and redistribute it.

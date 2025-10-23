@@ -1,6 +1,6 @@
-# bash completion for apt-mgr
+# bash completion for pkgmgr
 
-_apt_mgr() {
+_pkg_mgr() {
     local cur prev words cword
     _init_completion || return
 
@@ -35,7 +35,7 @@ _apt_mgr() {
             COMPREPLY=($(compgen -W "bash zsh" -- "${cur}"))
             return 0
             ;;
-        apt-mgr)
+        pkgmgr)
             COMPREPLY=($(compgen -W "${commands}" -- "${cur}"))
             return 0
             ;;
@@ -46,4 +46,4 @@ _apt_mgr() {
     fi
 }
 
-complete -F _apt_mgr apt-mgr
+complete -F _pkg_mgr pkgmgr

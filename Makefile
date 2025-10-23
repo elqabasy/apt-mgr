@@ -1,17 +1,8 @@
-# Makefile for apt-mgr
-PACKAGE=apt-mgr
-VERSION=1.1.0
-PREFIX=/usr
-BINDIR=$(PREFIX)/bin
-MANDIR=$(PREFIX)/share/man
-DOCDIR=$(PREFIX)/share/doc/$(PACKAGE)
-COMPLETIONDIR=$(PREFIX)/share/bash-completion/completions
-ZSHCOMPLETIONDIR=$(PREFIX)/share/zsh/vendor-completions
-ETCDIR=/etc
-BUILDDIR=./build
+# Makefile for pkgmgr
+include project.conf
 
 all:
-	@echo "Use 'make install' to install $(PACKAGE)"
+	@echo "Use 'make install' to install $(PACKAGE_NAME)"
 	@echo "Use 'make deb' to build Debian package in $(BUILDDIR)/"
 
 install:
@@ -23,39 +14,39 @@ install:
 	install -d $(DESTDIR)$(DOCDIR)
 	install -d $(DESTDIR)$(ETCDIR)
 	
-	install -m 0755 apt-mgr $(DESTDIR)$(BINDIR)/
-	install -m 0644 man/apt-mgr.1 $(DESTDIR)$(MANDIR)/man1/
-	install -m 0644 man/apt-mgr.conf.5 $(DESTDIR)$(MANDIR)/man5/
-	install -m 0644 completions/apt-mgr.bash $(DESTDIR)$(COMPLETIONDIR)/
-	install -m 0644 completions/apt-mgr.zsh $(DESTDIR)$(ZSHCOMPLETIONDIR)/
-	install -m 0644 etc/apt-mgr.conf $(DESTDIR)$(ETCDIR)/
+	install -m 0755 $(PACKAGE_NAME) $(DESTDIR)$(BINDIR)/
+	install -m 0644 man/$(PACKAGE_NAME).1 $(DESTDIR)$(MANDIR)/man1/
+	install -m 0644 man/$(PACKAGE_NAME).conf.5 $(DESTDIR)$(MANDIR)/man5/
+	install -m 0644 completions/$(PACKAGE_NAME).bash $(DESTDIR)$(COMPLETIONDIR)/$(PACKAGE_NAME)
+	install -m 0644 completions/$(PACKAGE_NAME).zsh $(DESTDIR)$(ZSHCOMPLETIONDIR)/_$(PACKAGE_NAME)
+	install -m 0644 etc/$(PACKAGE_NAME).conf $(DESTDIR)$(ETCDIR)/
 	install -m 0644 LICENSE $(DESTDIR)$(DOCDIR)/
 	install -m 0644 README.md $(DESTDIR)$(DOCDIR)/
 	
 	# Compress man pages
-	gzip -9 $(DESTDIR)$(MANDIR)/man1/apt-mgr.1
-	gzip -9 $(DESTDIR)$(MANDIR)/man5/apt-mgr.conf.5
+	gzip -9 $(DESTDIR)$(MANDIR)/man1/$(PACKAGE_NAME).1
+	gzip -9 $(DESTDIR)$(MANDIR)/man5/$(PACKAGE_NAME).conf.5
 
 uninstall:
-	rm -f $(DESTDIR)$(BINDIR)/apt-mgr
-	rm -f $(DESTDIR)$(MANDIR)/man1/apt-mgr.1.gz
-	rm -f $(DESTDIR)$(MANDIR)/man5/apt-mgr.conf.5.gz
-	rm -f $(DESTDIR)$(COMPLETIONDIR)/apt-mgr.bash
-	rm -f $(DESTDIR)$(ZSHCOMPLETIONDIR)/apt-mgr.zsh
-	rm -f $(DESTDIR)$(ETCDIR)/apt-mgr.conf
-	rm -rf $(DESTDIR)$(DOCDIR)/$(PACKAGE)
+	rm -f $(DESTDIR)$(BINDIR)/$(PACKAGE_NAME)
+	rm -f $(DESTDIR)$(MANDIR)/man1/$(PACKAGE_NAME).1.gz
+	rm -f $(DESTDIR)$(MANDIR)/man5/$(PACKAGE_NAME).conf.5.gz
+	rm -f $(DESTDIR)$(COMPLETIONDIR)/$(PACKAGE_NAME)
+	rm -f $(DESTDIR)$(ZSHCOMPLETIONDIR)/_$(PACKAGE_NAME)
+	rm -f $(DESTDIR)$(ETCDIR)/$(PACKAGE_NAME).conf
+	rm -rf $(DESTDIR)$(DOCDIR)/$(PACKAGE_NAME)
 
 deb:
-	@echo "Building Debian package in $(BUILDDIR)/..."
+	@echo "Building Debian package $(PACKAGE_NAME)_$(PACKAGE_VERSION) in $(BUILDDIR)/..."
 	mkdir -p $(BUILDDIR)
 	dpkg-buildpackage -us -uc -b
 	@echo "Moving build artifacts to $(BUILDDIR)/..."
-	mv ../$(PACKAGE)_* $(BUILDDIR)/
+	mv ../$(PACKAGE_NAME)_* $(BUILDDIR)/
 	@echo "Build complete! Package files are in $(BUILDDIR)/"
 
 clean:
 	rm -rf $(BUILDDIR)
 	dh_clean
-	rm -f ../$(PACKAGE)_*
+	rm -f ../$(PACKAGE_NAME)_*
 
 .PHONY: all install uninstall deb clean

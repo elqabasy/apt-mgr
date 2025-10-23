@@ -4,7 +4,7 @@
 
 
 
-
+trash/
 
 # Build artifacts
 /build/
@@ -15,7 +15,7 @@
 *.tar.gz
 debian/files
 debian/.debhelper/
-debian/apt-mgr/
+debian/pkgmgr
 debian/debhelper-build-stamp
 
 *.d
