@@ -128,7 +128,7 @@ If you encounter any issues, please [open an issue](https://github.com/elqabasy/
 ---
 
 **Maintained by Mahros AL-Qabasy** • [GitHub](https://github.com/elqabasy) • [Email](mailto:mahros.elqabasy@gmail.com)
-```
+
 
 ### GitHub Topics:
 ```
