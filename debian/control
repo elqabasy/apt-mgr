@@ -1,0 +1,26 @@
+Source: apt-mgr
+Section: admin
+Priority: optional
+Maintainer: Mahros AL-Qabasy <mahros.elqabasy@gmail.com>
+Build-Depends: debhelper-compat (= 13), dh-exec
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+Homepage: https://github.com/elqabasy/apt-mgr
+
+Package: apt-mgr
+Architecture: all
+Depends: ${misc:Depends}, bash, apt
+Suggests: bash-completion, zsh
+Description: Professional APT package backup, restore and cleanup tool
+ apt-mgr is a comprehensive command-line utility designed to simplify
+ package management on Debian-based systems. It provides robust
+ backup/restore capabilities, intelligent cleanup features, and detailed
+ system analysis in a user-friendly interface.
+ .
+ Features:
+  * Smart package backup with minimal or full options
+  * Easy package restoration with dependency handling
+  * Intelligent cleanup with safe and aggressive modes
+  * System analysis to identify large packages
+  * Distribution aware (Debian, Ubuntu, Kali Linux)
+  * Bash and Zsh completion support

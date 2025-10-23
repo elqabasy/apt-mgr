@@ -1,0 +1,43 @@
+.TH APT\-MGR.CONF 5 "2024" "apt-mgr 1.1.0" "apt-mgr configuration file"
+.SH NAME
+apt-mgr.conf \- Configuration file for apt-mgr
+.SH DESCRIPTION
+The
+.B apt-mgr.conf
+file contains configuration settings for the apt-mgr tool. This file is optional and if not present, default values will be used.
+.SH SYNTAX
+The configuration file uses a simple KEY=VALUE syntax. Lines starting with # are treated as comments and ignored.
+.SH OPTIONS
+.TP
+.B BACKUP_DIR
+Directory where backup files are stored. Default: ~/.apt-mgr/backups
+.TP
+.B LOG_LEVEL
+Logging level. Can be: INFO, WARNING, ERROR. Default: INFO
+.TP
+.B AGGRESSIVE_CLEANUP
+Enable aggressive cleanup by default. Values: true, false. Default: false
+.TP
+.B MINIMAL_BACKUP
+Use minimal backup by default. Values: true, false. Default: false
+.TP
+.B AUTO_UPDATE
+Update package lists automatically before operations. Values: true, false. Default: true
+.SH EXAMPLE
+# apt-mgr configuration file
+.B BACKUP_DIR=~/.my-backups
+.B LOG_LEVEL=INFO
+.B AGGRESSIVE_CLEANUP=false
+.B MINIMAL_BACKUP=true
+.B AUTO_UPDATE=true
+.SH FILES
+.TP
+.B /etc/apt-mgr.conf
+System-wide configuration file.
+.TP
+.B ~/.apt-mgr/apt-mgr.conf
+User-specific configuration file.
+.SH SEE ALSO
+.BR apt-mgr (1)
+.SH AUTHOR
+Mahros AL-Qabasy <mahros.elqabasy@gmail.com>

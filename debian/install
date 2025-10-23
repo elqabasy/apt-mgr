@@ -1,0 +1,8 @@
+apt-mgr usr/bin
+man/apt-mgr.1 usr/share/man/man1
+man/apt-mgr.conf.5 usr/share/man/man5
+completions/apt-mgr.bash usr/share/bash-completion/completions
+completions/apt-mgr.zsh usr/share/zsh/vendor-completions
+etc/apt-mgr.conf etc
+LICENSE usr/share/doc/apt-mgr
+README.md usr/share/doc/apt-mgr

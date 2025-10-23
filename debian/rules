@@ -1,0 +1,41 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	# No need to clean for a script package
+
+override_dh_auto_build:
+	# No build step for a script package
+
+override_dh_auto_test:
+	# No tests defined yet
+
+override_dh_install:
+	# dh_install
+	# 
+	# # Install main script
+	# install -d debian/apt-mgr/usr/bin
+	# install -m 0755 apt-mgr debian/apt-mgr/usr/bin/
+	# 
+	# # Install man pages
+	# install -d debian/apt-mgr/usr/share/man/man1
+	# install -d debian/apt-mgr/usr/share/man/man5
+	# install -m 0644 man/apt-mgr.1 debian/apt-mgr/usr/share/man/man1/
+	# install -m 0644 man/apt-mgr.conf.5 debian/apt-mgr/usr/share/man/man5/
+	# 
+	# # Install completions
+	# install -d debian/apt-mgr/usr/share/bash-completion/completions
+	# install -d debian/apt-mgr/usr/share/zsh/vendor-completions
+	# install -m 0644 completions/apt-mgr.bash debian/apt-mgr/usr/share/bash-completion/completions/apt-mgr
+	# install -m 0644 completions/apt-mgr.zsh debian/apt-mgr/usr/share/zsh/vendor-completions/_apt-mgr
+	# 
+	# # Install configuration
+	# install -d debian/apt-mgr/etc
+	# install -m 0644 etc/apt-mgr.conf debian/apt-mgr/etc/
+	# 
+	# # Install documentation
+	# install -d debian/apt-mgr/usr/share/doc/apt-mgr
+	# install -m 0644 LICENSE debian/apt-mgr/usr/share/doc/apt-mgr/
+	# install -m 0644 README.md debian/apt-mgr/usr/share/doc/apt-mgr/

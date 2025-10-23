@@ -1,5 +1,27 @@
+!.gitignore
+
 # Prerequisites
+
+
+
+
+
+# Build artifacts
+/build/
+*.deb
+*.changes
+*.buildinfo
+*.dsc
+*.tar.gz
+debian/files
+debian/.debhelper/
+debian/apt-mgr/
+debian/debhelper-build-stamp
+
 *.d
+
+
+build/
 
 # Compiled Object files
 *.slo
